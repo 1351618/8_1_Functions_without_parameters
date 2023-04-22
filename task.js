@@ -77,6 +77,7 @@ function PrimeNumber(GetNum) {
 document.getElementById("task_2_button").addEventListener("click", function () {
     let GetNum = document.getElementById("task_2_Input").value;
     document.getElementById("task_2_result").textContent = PrimeNumber(GetNum);
+    console.log(PrimeNumber(GetNum));
 });
 
 
@@ -118,9 +119,10 @@ document.getElementById("task_3__button").addEventListener("click", function () 
 function Range_Busting(range_Start, range_end) {
     let i = range_Start;
     function Print_Next() {
-        if (i < range_end) {
-            i++;
+        if (i < range_end + 1) {
             document.getElementById("task_4__result").textContent = i;
+            console.log(i);
+            i++;
             setTimeout(Print_Next, 1000);
         }
     }
@@ -135,3 +137,26 @@ document.getElementById("task_4__button").addEventListener("click", function () 
 
     // document.getElementById("task_4__result").textContent = range_Start + range_end;
 })
+
+
+
+// Задание 5
+
+// Напишите функцию, которая принимает два натуральных числа x и n 
+// и возвращает x в степени n. Иначе говоря, умножает x на себя n раз 
+// и возвращает результат.
+
+// Используйте Arrow Function синтаксис.
+
+document.getElementById("task_5_button").addEventListener("click", function () {
+    let x_num = parseInt(document.getElementById("task_5__Input-1").value);
+    let n_num = parseInt(document.getElementById("task_5__Input-2").value);
+
+    const exponentiation = ((x_num, n_num) => {
+        let result = x_num ** n_num;
+        document.getElementById("task_5__result").textContent = result;
+        console.log(result);
+    })(x_num, n_num);
+
+
+});
